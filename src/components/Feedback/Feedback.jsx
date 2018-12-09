@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import axios from 'axios';
-import { throws } from 'assert';
+import {withRouter} from 'react-router-dom'
+
 
 
 
@@ -19,7 +20,7 @@ class Feedback extends Component{
              console.log(err);
              
          })
-         
+         this.props.history.push('/thankyou')
      }
  }
 
@@ -33,8 +34,8 @@ class Feedback extends Component{
             <h1>Feedback</h1>
             <ul>
                 <li>I Am Feeling:{feedback.feeling}</li>
-                <li>I Feel Supported:{feedback.support}</li>
                 <li>I Understand The Content:{feedback.content}</li> 
+                <li>I Feel Supported:{feedback.support}</li>
                 <li>Comments:{feedback.comments}</li>
             </ul>
             <button onClick={this.postFeedback}>Submit</button>
@@ -48,4 +49,4 @@ const mapReduxStateToProps = (reduxStore) =>{
       reduxStore
     }
     }
-export default connect(mapReduxStateToProps)(Feedback);
+export default withRouter(connect(mapReduxStateToProps)(Feedback));
