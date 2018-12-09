@@ -18,7 +18,7 @@ class FeelingSupported extends Component{
         
       }
 handleSupportClick = () =>{
-    this.props.dispatch({type: 'ADD_SUPPORT', payload:this.state})
+    this.props.dispatch({type: 'ADD_SUPPORT', payload:this.state.support})
 }
     render(){
         return(

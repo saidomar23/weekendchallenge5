@@ -18,7 +18,7 @@ class UnderstandingContent extends Component{
         
       }
 handleContentClick = () =>{
-    this.props.dispatch({type: 'ADD_CONTENT', payload: this.state})
+    this.props.dispatch({type: 'ADD_CONTENT', payload: this.state.content})
 }
     render(){
         return(

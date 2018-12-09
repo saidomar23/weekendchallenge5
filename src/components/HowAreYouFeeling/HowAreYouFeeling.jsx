@@ -7,7 +7,7 @@ import Feedback from '../Feedback/Feedback'
 
 class HowAreYouFeeling extends Component {
     state = {
-        feeling: '',
+        feeling: 0,
     }
     handleFeelingChange = (event) => {
         this.setState({
@@ -17,7 +17,7 @@ class HowAreYouFeeling extends Component {
 
     }
     handleFeelingClick = () => {
-        this.props.dispatch({ type: 'ADD_FEELING', payload: this.state })
+        this.props.dispatch({ type: 'ADD_FEELING', payload: this.state.feeling })
     }
 
 

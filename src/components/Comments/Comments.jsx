@@ -17,7 +17,7 @@ class Comments extends Component{
         
       }
 handleCommentsClick = () =>{
-    this.props.dispatch({type: 'ADD_COMMENT', payload: this.state})
+    this.props.dispatch({type: 'ADD_COMMENT', payload: this.state.comments})
 }
     render(){
         return(
